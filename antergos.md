@@ -24,7 +24,11 @@ yaourt -S papirus-wallpapers-git
 ```
 yaourt -S arc-dark-suite-git
 ```
-Fix menubar color in GTK apps
+Fix color menubar on GTK
+```
+sudo bash /usr/share/plasma/desktoptheme/Arc-Dark/fix-menubar.sh
+```
+Or add bash alias fix-menubar:
 ```
 echo 'alias fix-menubar="sudo bash /usr/share/plasma/desktoptheme/Arc-Dark/fix-menubar.sh"' >> ~/.bashrc
 ```
