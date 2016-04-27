@@ -1,6 +1,3 @@
-### Customization
-
-
 ### Multimedia
 * Codecs
 ```
@@ -13,34 +10,27 @@ sudo dpkg-reconfigure libdvd-pkg
 ```
 
 ### System tools
-
-#### Java
-###### Oracle Java ([link](http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html))
-```
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt update
-sudo apt install oracle-java8-installer
-```
-```
-sudo apt install oracle-java8-set-default
-```
-###### OpenJDK (patched with font fixes) ([link](http://www.webupd8.org/2013/06/install-openjdk-patched-with-font-fixes.html))
-```
-sudo add-apt-repository ppa:no1wantdthisname/openjdk-fontfix
-sudo apt update
-sudo apt install in openjdk-8-jdk
-```
-
-```
-sudo update-alternatives --config java
-```
-
-### Applications
-#### Utilities
 ###### Git
 ```
 sudo apt install git
 ```
+###### Synaptic
+```
+sudo apt install synaptic
+```
+###### dconf-editor
+```
+sudo apt install dconf-editor
+```
+###### Compiz config & plugins
+```
+sudo apt install compizconfig-settings-manager compiz-plugins
+```
+
+### Applications
+#### Utilities
+
+
 #### Internet
 ###### TeamViever
 ```
@@ -102,6 +92,26 @@ sudo apt install okular-extra-backends
 sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
 sudo apt update
 sudo apt install ubuntu-make
+```
+###### Java
+###### Oracle Java ([link](http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html))
+```
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt update
+sudo apt install oracle-java8-installer
+```
+```
+sudo apt install oracle-java8-set-default
+```
+###### OpenJDK (patched with font fixes) ([link](http://www.webupd8.org/2013/06/install-openjdk-patched-with-font-fixes.html))
+```
+sudo add-apt-repository ppa:no1wantdthisname/openjdk-fontfix
+sudo apt update
+sudo apt install in openjdk-8-jdk
+```
+
+```
+sudo update-alternatives --config java
 ```
 ### Fixes & Hacks
 ###### Unity Tweak Tool
