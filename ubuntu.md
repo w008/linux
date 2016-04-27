@@ -76,8 +76,8 @@ sudo teamviewer --daemon disable
 ```
 sudo teamviewer --daemon enable
 ```
-## Office
-### Okular
+### Office
+###### Okular
 ```
 sudo apt-get install okular
 sudo apt-get install okular-extra-backends 
