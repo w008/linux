@@ -26,12 +26,12 @@ sudo apt install dconf-editor
 ```
 sudo apt install compizconfig-settings-manager compiz-plugins
 ```
+###### Unity Tweak Tool
+```
+sudo apt install unity-tweak-tool
+```
 
-### Applications
-#### Utilities
-
-
-#### Internet
+### Apps
 ###### TeamViever
 ```
 sudo apt install libxtst6:i386 libxrandr2:i386
@@ -79,7 +79,6 @@ sudo add-apt-repository ppa:atareao/telegram
 sudo apt update
 sudo apt install telegram
 ```
-#### Office
 ###### Okular
 ```
 sudo apt install okular
@@ -112,11 +111,6 @@ sudo apt install in openjdk-8-jdk
 
 ```
 sudo update-alternatives --config java
-```
-### Fixes & Hacks
-###### Unity Tweak Tool
-```
-sudo apt install unity-tweak-tool
 ```
 
 ### Troubleshooting
