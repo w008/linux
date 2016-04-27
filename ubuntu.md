@@ -1,14 +1,22 @@
 ## Initial
- 
+```
+sudo apt-get update
+sudo apt-get upgrade
+```
+
 ## Customization
 
+
 ## Multimedia
+* Codecs
 ```
 sudo apt-get install ubuntu-restricted-extras
-sudo sh /usr/share/doc/libdvdread4/install-css.sh
 ```
-
-
+* Encrypted DVD playback
+```
+sudo apt-get install libdvd-pkg
+sudo dpkg-reconfigure libdvd-pkg
+```
 
 ## System tools
 
@@ -86,6 +94,10 @@ sudo apt-get install okular-extra-backends
 ## Development
 
 ## Fixes & Hacks
+###### Unity Tweak Tool
+```
+sudo apt-get install unity-tweak-tool
+```
 
 ## Troubleshooting
 ### Error:  Diskfilter writes are not supported ([link](http://askubuntu.com/questions/468466/diskfilter-writes-are-not-supported-what-triggers-this-error))
