@@ -2,6 +2,15 @@
  
 ## Customizations
 
+## Multimedia
+```
+sudo apt-get install ubuntu-restricted-extras
+sudo apt-get install libavcodec-extra
+sudo sh /usr/share/doc/libdvdread4/install-css.sh
+```
+
+
+
 ## System tools
 
 ### Java
@@ -67,6 +76,12 @@ sudo teamviewer --daemon disable
 - Enable TeamViewer daemon - start daemon on system startup (default)
 ```
 sudo teamviewer --daemon enable
+```
+## Office
+### Okular
+```
+sudo apt-get install okular
+sudo apt-get install okular-extra-backends 
 ```
 
 ## Development
