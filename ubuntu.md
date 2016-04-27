@@ -89,9 +89,7 @@ sudo apt-get install okular-extra-backends
 ## Fixes & Hacks
 
 ## Troubleshooting
-### Error:  Diskfilter writes are not supported
-
-http://askubuntu.com/questions/468466/diskfilter-writes-are-not-supported-what-triggers-this-error
+### Error:  Diskfilter writes are not supported ([link](http://askubuntu.com/questions/468466/diskfilter-writes-are-not-supported-what-triggers-this-error))
 
 This is a bug that occurs in the most recent version of Ubuntu Server LTS (Ubuntu Server 14.04 LTS), when you create the boot partition (or the root partition, when the boot partition doesn't exists) inside a LVM or a RAID partition.
 
@@ -115,3 +113,47 @@ chmod +x /etc/grub.d/00_header
 ```
 update-grub
 ```
+
+### Fix time differences between ubuntu and windows ([link](http://www.webupd8.org/2014/09/dual-boot-fix-time-differences-between.html))
+
+To fix the UTC / local time difference between Ubuntu and Windows from Ubuntu by making Ubuntu use local time.
+
+###### For Ubuntu 16.04 and newer
+```
+timedatectl set-local-rtc 1
+```
+###### For Ubuntu versions older than 16.04
+```
+sudo sed -i 's/UTC=yes/UTC=no/' /etc/default/rcS
+```
+  And reboot.
+  
+###### Windows
+
+Fixing this from Windows (it should work with Vista SP2, Windows 7, Server 2008 R2 and Windows 8/8.1), by making it use UTC instead of local time, download [THIS](https://help.ubuntu.com/community/UbuntuTime?action=AttachFile&do=get&target=WindowsTimeFixUTC.reg) Windows registry file and simply double click it.
+
+Then, to disable the Windows Time service (which still writes local time to RTC regardless of the registry setting above, on shutdown), run Command Prompt as Administrator and paste this command:
+```
+sc config w32time start= disabled
+```
+And reboot.
+
+###### Reverting changes
+```
+timedatectl set-local-rtc 0
+```
+or
+```
+sudo sed -i 's/UTC=no/UTC=yes/' /etc/default/rcS
+```
+or
+```
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
+"RealTimeIsUniversal"=-
+```
+```
+sc config w32time start= demand
+```
+And reboot.
