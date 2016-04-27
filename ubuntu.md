@@ -1,14 +1,3 @@
-### Multimedia
-* Codecs
-```
-sudo apt install ubuntu-restricted-extras
-```
-* Encrypted DVD playback
-```
-sudo apt install libdvd-pkg
-sudo dpkg-reconfigure libdvd-pkg
-```
-
 ### System tools
 ###### Git
 ```
@@ -29,6 +18,17 @@ sudo apt install compizconfig-settings-manager compiz-plugins
 ###### Unity Tweak Tool
 ```
 sudo apt install unity-tweak-tool
+```
+
+### Multimedia
+* Codecs
+```
+sudo apt install ubuntu-restricted-extras
+```
+* Encrypted DVD playback
+```
+sudo apt install libdvd-pkg
+sudo dpkg-reconfigure libdvd-pkg
 ```
 
 ### Apps
