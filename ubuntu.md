@@ -1,6 +1,6 @@
 ## Initial
  
-## Customizations
+## Customization
 
 ## Multimedia
 ```
