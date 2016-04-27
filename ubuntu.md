@@ -11,6 +11,9 @@ sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install oracle-java8-installer
 ```
+```
+sudo apt-get install oracle-java8-set-default
+```
 * [OpenJDK (Patched with font fixes )](http://www.webupd8.org/2013/06/install-openjdk-patched-with-font-fixes.html)
 ```
 sudo add-apt-repository ppa:no1wantdthisname/openjdk-fontfix
@@ -23,7 +26,77 @@ sudo update-alternatives --config java
 ```
 
 ## Applications
+### Internet
+* TeamViever
+```
+sudo apt-get install libxtst6:i386 libxrandr2:i386
+```
+```
+wget http://download.teamviewer.com/download/teamviewer_i386.deb
+```
+```
+sudo dpkg --add-architecture i386
+sudo apt-get update
+```
+```
+sudo dpkg -i teamviewer_linux*.deb
+apt-get -f install
+```
+
+Commands
+- Show current status of the TeamViewer daemon
+```
+sudo teamviewer --daemon status
+```
+- Start TeamViewer daemon
+```
+sudo  --daemon start
+```
+- Stop TeamViewer daemon
+```
+sudo teamviewer --daemon stop
+```
+- Restart TeamViewer daemon
+```
+sudo teamviewer --daemon restart
+```
+- Disable TeamViewer daemon - don't start daemon on system startup
+```
+sudo teamviewer --daemon disable
+```
+- Enable TeamViewer daemon - start daemon on system startup (default)
+```
+sudo teamviewer --daemon enable
+```
 
 ## Development
 
 ## Fixes & Hacks
+
+## Troubleshooting
+### Error:  Diskfilter writes are not supported
+
+http://askubuntu.com/questions/468466/diskfilter-writes-are-not-supported-what-triggers-this-error
+
+This is a bug that occurs in the most recent version of Ubuntu Server LTS (Ubuntu Server 14.04 LTS), when you create the boot partition (or the root partition, when the boot partition doesn't exists) inside a LVM or a RAID partition.
+
+The correct solution should consider disable the save_env statements when GRUB is inside LVM or RAID partitions.
+
+* Download
+```
+wget https://gist.githubusercontent.com/rarylson/da6b77ad6edde25529b2/raw/99f266a10e663e1829efc25eca6eddb9412c6fdc/00_header_patched
+```
+* Apply
+```
+mv /etc/grub.d/00_header /etc/grub.d/00_header.orig
+mv 00_header_patched /etc/grub.d/00_header
+```
+* Disable the old script and enable the new one
+```
+chmod -x /etc/grub.d/00_header.orig
+chmod +x /etc/grub.d/00_header
+```
+* Update Grub
+```
+update-grub
+```
