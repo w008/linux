@@ -5,7 +5,6 @@
 ## Multimedia
 ```
 sudo apt-get install ubuntu-restricted-extras
-sudo apt-get install libavcodec-extra
 sudo sh /usr/share/doc/libdvdread4/install-css.sh
 ```
 
