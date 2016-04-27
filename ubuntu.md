@@ -1,9 +1,3 @@
-### Initial
-```
-sudo apt update
-sudo apt upgrade
-```
-
 ### Customization
 
 
@@ -42,6 +36,11 @@ sudo update-alternatives --config java
 ```
 
 ### Applications
+#### Utilities
+###### Git
+```
+sudo apt install git
+```
 #### Internet
 ###### TeamViever
 ```
