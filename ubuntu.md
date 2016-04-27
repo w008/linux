@@ -1,7 +1,7 @@
 ## Initial
 ```
-sudo apt-get update
-sudo apt-get upgrade
+sudo apt update
+sudo apt upgrade
 ```
 
 ## Customization
@@ -10,11 +10,11 @@ sudo apt-get upgrade
 ## Multimedia
 * Codecs
 ```
-sudo apt-get install ubuntu-restricted-extras
+sudo apt install ubuntu-restricted-extras
 ```
 * Encrypted DVD playback
 ```
-sudo apt-get install libdvd-pkg
+sudo apt install libdvd-pkg
 sudo dpkg-reconfigure libdvd-pkg
 ```
 
@@ -24,17 +24,17 @@ sudo dpkg-reconfigure libdvd-pkg
 ###### Oracle Java ([link](http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html))
 ```
 sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
-sudo apt-get install oracle-java8-installer
+sudo apt update
+sudo apt install oracle-java8-installer
 ```
 ```
-sudo apt-get install oracle-java8-set-default
+sudo apt install oracle-java8-set-default
 ```
 ###### OpenJDK (patched with font fixes) ([link](http://www.webupd8.org/2013/06/install-openjdk-patched-with-font-fixes.html))
 ```
 sudo add-apt-repository ppa:no1wantdthisname/openjdk-fontfix
-sudo apt-get update
-sudo apt-get install in openjdk-8-jdk
+sudo apt update
+sudo apt install in openjdk-8-jdk
 ```
 
 ```
@@ -45,14 +45,14 @@ sudo update-alternatives --config java
 ### Internet
 ###### TeamViever
 ```
-sudo apt-get install libxtst6:i386 libxrandr2:i386
+sudo apt install libxtst6:i386 libxrandr2:i386
 ```
 ```
 wget http://download.teamviewer.com/download/teamviewer_i386.deb
 ```
 ```
 sudo dpkg --add-architecture i386
-sudo apt-get update
+sudo apt update
 ```
 ```
 sudo dpkg -i teamviewer_linux*.deb
@@ -84,19 +84,30 @@ sudo teamviewer --daemon disable
 ```
 sudo teamviewer --daemon enable
 ```
+###### Telegram
+```
+sudo add-apt-repository ppa:atareao/telegram
+sudo apt update
+sudo apt install telegram
+```
 ### Office
 ###### Okular
 ```
-sudo apt-get install okular
-sudo apt-get install okular-extra-backends 
+sudo apt install okular
+sudo apt install okular-extra-backends 
 ```
 
 ## Development
-
+###### Ubuntu Make
+```
+sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
+sudo apt update
+sudo apt install ubuntu-make
+```
 ## Fixes & Hacks
 ###### Unity Tweak Tool
 ```
-sudo apt-get install unity-tweak-tool
+sudo apt install unity-tweak-tool
 ```
 
 ## Troubleshooting
