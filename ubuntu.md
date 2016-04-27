@@ -27,7 +27,7 @@ sudo update-alternatives --config java
 
 ## Applications
 ### Internet
-* TeamViever
+###### TeamViever
 ```
 sudo apt-get install libxtst6:i386 libxrandr2:i386
 ```
