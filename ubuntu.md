@@ -31,7 +31,7 @@ sudo apt install libdvd-pkg
 sudo dpkg-reconfigure libdvd-pkg
 ```
 
-### Apps
+### Internet
 ###### TeamViever
 ```
 sudo apt install libxtst6:i386 libxrandr2:i386
@@ -79,6 +79,10 @@ sudo add-apt-repository ppa:atareao/telegram
 sudo apt update
 sudo apt install telegram
 ```
+### Games
+
+### Office
+
 ###### Okular
 ```
 sudo apt install okular
