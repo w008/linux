@@ -173,15 +173,15 @@ sudo apt install okular-extra-backends
 ```
 
 ### Development
-###### Ubuntu Make
+##### Ubuntu Make
 ```
 sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
 sudo apt update
 sudo apt install ubuntu-make
 ```
-###### Sublime text 3
-###### IntelliJ IDEA
-###### Java
+##### Sublime text 3
+##### IntelliJ IDEA
+##### Java
 ###### Oracle Java ([link](http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html))
 ```
 sudo add-apt-repository ppa:webupd8team/java
@@ -201,10 +201,15 @@ sudo apt install in openjdk-8-jdk
 ```
 sudo update-alternatives --config java
 ```
-###### NodeJS
-###### Python
-###### Ruby
-###### LAMP
+##### NodeJS
+##### Python
+##### Ruby
+##### LAMP
+###### Composer
+```
+curl -s https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer
+```
 ###### Apache Virtual Hosts ([link](https://www.vultr.com/docs/apache-virtual-hosts-on-ubuntu-14-04-lts))
 ```
 sudo mkdir /var/www/test.loc
