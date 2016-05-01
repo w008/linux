@@ -205,7 +205,53 @@ sudo update-alternatives --config java
 ###### Python
 ###### Ruby
 ###### LAMP
-
+###### Apache Virtual Hosts
+```
+sudo mkdir /var/www/test.loc
+```
+```
+sudo chown -R $USER:$USER /var/www/test.loc
+```
+```
+sudo chmod -R 755 /var/www
+```
+```
+nano /var/www/test.loc/index.html
+```
+```
+<html>
+  <head>
+    <title>test.loc</title>
+  </head>
+  <body>
+    <h1>test.loc virtual host !</h1>
+  </body>
+</html>
+```
+```
+sudo cp /etc/apache28/sites-available/000-default.conf /etc/apache2/sites-available/test.loc.conf
+```
+```
+sudo nano /etc/apache2/sites-available/test.loc.conf
+```
+```
+<VirtualHost *:80>
+    ServerAdmin admin@test.loc
+    ServerName test.loc
+    ServerAlias www.test.loc
+    DocumentRoot /var/www/test.loc
+</VirtualHost>
+```
+```
+sudo a2ensite test.loc.conf
+```
+```
+sudo nano /etc/hosts
+127.0.0.1 test.loc
+```
+```
+sudo service apache2 restart
+```
 ### Configuration
 ###### Generating SSH key
 ```
