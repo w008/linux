@@ -205,7 +205,7 @@ sudo update-alternatives --config java
 ###### Python
 ###### Ruby
 ###### LAMP
-###### Apache Virtual Hosts
+###### Apache Virtual Hosts ([link](https://www.vultr.com/docs/apache-virtual-hosts-on-ubuntu-14-04-lts))
 ```
 sudo mkdir /var/www/test.loc
 ```
