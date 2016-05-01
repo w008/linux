@@ -1,4 +1,10 @@
 ### System tools
+###### Zsh & OhMyZsh
+```
+sudo apt install zsh
+chsh -s /bin/zsh
+sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+```
 ###### Git
 ```
 sudo apt install git
@@ -170,6 +176,10 @@ sudo apt install chromium-browser pepperflashplugin-nonfree
 ```
 sudo apt install okular
 sudo apt install okular-extra-backends 
+```
+###### Libre Office
+```
+sudo apt install libreoffice-style-sifr
 ```
 
 ### Development
