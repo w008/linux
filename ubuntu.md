@@ -93,6 +93,14 @@ sudo apt install my-weather-indicator
 ```
 sudo apt install caffeine
 ```
+###### Minimize apps on click
+```
+gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-minimize-window true
+```
+###### Move The Unity Launcher
+```
+gsettings set com.canonical.Unity.Launcher launcher-position Bottom
+```
 
 ### Multimedia
 * Codecs
