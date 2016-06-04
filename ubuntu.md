@@ -232,6 +232,7 @@ rvm list known
 rvm install ...
 rvm use ...
 ```
+###### /home/user/.rvm/scripts/cli:314: parse error near `apt'
 
 I had the same problem until I put [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" into a .zshenv file instead of the .zshrc file.
 
