@@ -35,7 +35,7 @@ sudo apt update
 ```
 ```
 sudo dpkg -i teamviewer_linux*.deb
-apt-get -f install
+sudo apt-get -f install
 ```
 
 Commands
@@ -237,6 +237,33 @@ rvm use ...
 I had the same problem until I put [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" into a .zshenv file instead of the .zshrc file.
 
 ##### LAMP
+```
+sudo apt-get install apache2
+```
+```
+sudo apt-get install mysql-client mysql-server
+sudo mysql_secure_installation
+```
+```
+sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql
+sudo apt install php-cli php-curl php-gd php-sqlite3 php-tidy php-xmlrpc php-imagick php-mbstring php-gettext
+```
+```
+sudo apt-get install phpmyadmin
+```
+
+After the installation has completed, add phpmyadmin to the apache configuration.
+```
+sudo nano /etc/apache2/apache2.conf
+```
+Add the phpmyadmin config to the file.
+
+```
+Include /etc/phpmyadmin/apache.conf
+```
+```
+sudo service apache2 restart
+```
 ###### Composer
 ```
 curl -s https://getcomposer.org/installer | php
