@@ -198,7 +198,7 @@ sudo apt install oracle-java8-set-default
 ```
 sudo add-apt-repository ppa:no1wantdthisname/openjdk-fontfix
 sudo apt update
-sudo apt install in openjdk-8-jdk
+sudo apt install openjdk-8-jdk
 ```
 
 ```
