@@ -5,26 +5,11 @@ sudo apt install zsh
 chsh -s /bin/zsh
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 ```
-###### Git
+###### Initial install
 ```
-sudo apt install git
+sudo apt install git synaptic dconf-editor compizconfig-settings-manager compiz-plugins unity-tweak-tool build-essential vim mercurial meld curl htop xclip unzip gdebi preload bleachbit cifs-utils unace unrar zip p7zip-full p7zip-rar sharutils rar openssh-server libssl-dev lm-sensors whois traceroute nmap font-manager sshfs mc
 ```
-###### Synaptic
-```
-sudo apt install synaptic
-```
-###### dconf-editor
-```
-sudo apt install dconf-editor
-```
-###### Compiz config & plugins
-```
-sudo apt install compizconfig-settings-manager compiz-plugins
-```
-###### Unity Tweak Tool
-```
-sudo apt install unity-tweak-tool
-```
+
 ###### Ubuntu Tweak
 ```
 wget http://archive.getdeb.net/ubuntu/pool/apps/u/ubuntu-tweak/ubuntu-tweak_0.8.7-1~getdeb2~xenial_all.deb
@@ -219,7 +204,7 @@ sudo apt install in openjdk-8-jdk
 ```
 sudo update-alternatives --config java
 ```
-##### NodeJS
+##### NodeJS (nvm)
 ```
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.1/install.sh | bash
 ```
@@ -234,7 +219,22 @@ nvm use default
 ```
 
 ##### Python
-##### Ruby
+##### Ruby (rvm)
+```
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+```
+```
+\curl -sSL https://get.rvm.io | bash -s stable
+```
+```
+rvm requirements 
+rvm list known
+rvm install ...
+rvm use ...
+```
+
+I had the same problem until I put [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" into a .zshenv file instead of the .zshrc file.
+
 ##### LAMP
 ###### Composer
 ```
