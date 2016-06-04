@@ -220,6 +220,19 @@ sudo apt install in openjdk-8-jdk
 sudo update-alternatives --config java
 ```
 ##### NodeJS
+```
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.1/install.sh | bash
+```
+```
+source ~/.profile  => (.profile to .zshrc)
+```
+```
+nvm ls-remote
+nvm install ...
+nvm alias default ...
+nvm use default
+```
+
 ##### Python
 ##### Ruby
 ##### LAMP
