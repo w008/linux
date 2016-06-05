@@ -78,6 +78,10 @@ sudo apt install my-weather-indicator
 ```
 sudo apt install caffeine
 ```
+###### Show username on panel
+```
+gsettings set com.canonical.indicator.session show-real-name-on-panel true
+```
 ###### Minimize apps on click
 ```
 gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-minimize-window true
