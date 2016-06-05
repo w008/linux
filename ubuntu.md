@@ -68,7 +68,7 @@ sudo teamviewer --daemon enable
 ```
 sudo apt install gtk2-engines-murrine:i386 gtk2-engines-pixbuf:i386
 ```
-####### My Weather Indicator
+###### My Weather Indicator
 ```
 sudo add-apt-repository ppa:atareao/atareao
 sudo apt update
@@ -183,6 +183,11 @@ sudo apt update
 sudo apt install ubuntu-make
 ```
 ##### Sublime text 3
+```
+wget https://download.sublimetext.com/sublime-text_build-3114_amd64.deb
+sudo dpkg -i sublime-text_build-3114_amd64.deb
+sudo apt-get -f install
+```
 ##### IntelliJ IDEA
 ##### Java
 ###### Oracle Java ([link](http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html))
@@ -293,7 +298,7 @@ nano /var/www/test.loc/index.html
 </html>
 ```
 ```
-sudo cp /etc/apache28/sites-available/000-default.conf /etc/apache2/sites-available/test.loc.conf
+sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/test.loc.conf
 ```
 ```
 sudo nano /etc/apache2/sites-available/test.loc.conf
