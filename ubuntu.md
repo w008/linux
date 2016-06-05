@@ -228,6 +228,19 @@ nvm use default
 ```
 
 ##### Python
+```
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+chmod +x Miniconda3-latest-Linux-x86_64.sh
+./Miniconda3-latest-Linux-x86_64.sh
+```
+```
+nano .zshrc
+export PATH="/home/auvarov/miniconda3/bin:$PATH"
+source ~/.zshrc
+```
+```
+conda update conda
+```
 ##### Ruby (rvm)
 ```
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
@@ -313,6 +326,12 @@ sudo nano /etc/apache2/sites-available/test.loc.conf
     ServerName test.loc
     ServerAlias www.test.loc
     DocumentRoot /var/www/test.loc
+    <Directory /var/www/test.loc>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        Order allow,deny
+        allow from all
+    </Directory>
 </VirtualHost>
 ```
 ```
