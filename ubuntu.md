@@ -164,9 +164,28 @@ sudo apt install chromium-browser pepperflashplugin-nonfree
 ###### Firefox Development Edition
 ### Games
 ###### NES
+FCEUX
+```
+sudo apt install fceux
+```
+Higan
+```
+sudo apt install higan
+```
 ###### SNES
 ###### Sega Gen
-
+GENS/GS
+```
+wget http://segaretro.org/images/7/75/Gens_2.16.7_i386.deb
+sudo dpkg -i Gens_2.16.7_i386.deb
+sudo apt install -f
+```
+Kega Fusion
+```
+wget http://www.carpeludum.com/download/kega-fusion_3.63-2_i386.deb
+sudo dpkg -i kega-fusion_3.63-2_i386.deb
+sudo apt install -f
+```
 ### Office
 
 ###### Okular
@@ -178,7 +197,12 @@ sudo apt install okular-extra-backends
 ```
 sudo apt install libreoffice-style-sifr
 ```
-
+###### MComix
+```
+sudo add-apt-repository ppa:nilarimogard/webupd8
+sudo apt-get update
+sudo apt-get install mcomix
+```
 ### Development
 ##### Ubuntu Make
 ```
