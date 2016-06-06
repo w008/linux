@@ -118,6 +118,18 @@ sudo add-apt-repository ppa:rvm/smplayer
 sudo apt update
 sudo apt install smplayer smtube smplayer-themes smplayer-skins
 ```
+##### DeadBeef
+```
+sudo add-apt-repository ppa:starws-box/deadbeef-player
+sudo apt update
+sudo apt install deadbeef
+```
+##### Mpd & Cantata
+```
+sudo add-apt-repository ppa:ubuntuhandbook1/cantata-qt 
+sudo apt update 
+sudo apt install mpd cantata
+```
 ### Internet & Network
 ##### Tools
 ```
@@ -341,16 +353,25 @@ rvm use ...
 I had the same problem until I put [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" into a .zshenv file instead of the .zshrc file.
 
 ##### LAMP
+###### Apache
 ```
 sudo apt install apache2
 ```
+Enable mod_rewrire
+```
+sudo a2enmod rewrite
+```
+###### MySQL
 ```
 sudo apt install mysql-client mysql-server
 sudo mysql_secure_installation
 ```
+###### PHP
 ```
 sudo apt install php libapache2-mod-php php-mcrypt php-mysql php-cli php-curl php-gd php-sqlite3 php-tidy php-xmlrpc php-imagick php-mbstring php-gettext
 ```
+
+###### PHPMyAdmin
 ```
 sudo apt install phpmyadmin
 ```
@@ -366,6 +387,20 @@ Include /etc/phpmyadmin/apache.conf
 ```
 ```
 sudo service apache2 restart
+```
+###### DBeaver (Free Universal Database Manager)
+```
+wget http://dbeaver.jkiss.org/files/dbeaver-ce_latest_amd64.deb
+sudo dpkg -i dbeaver-ce_latest_amd64.deb
+sudo apt install -f
+```
+###### MyCLI ([A Terminal Client for MySQL with AutoCompletion and Syntax Highlighting](https://github.com/dbcli/mycli))
+```
+pip install mycli
+```
+OR
+```
+condo install mycli
 ```
 ###### Composer
 ```
@@ -465,6 +500,15 @@ sudo apt install caffeine
 ##### Show username on panel
 ```
 gsettings set com.canonical.indicator.session show-real-name-on-panel true
+```
+##### Change datetime format on panel
+
+```
+dcong-editor
+```
+Go to com/canonical/indicator/datetime:
+```
+%a, %e %b %Y %H:%M:%S 
 ```
 ##### Minimize apps on click
 ```
