@@ -286,7 +286,16 @@ wget https://download.sublimetext.com/sublime-text_build-3114_amd64.deb
 sudo dpkg -i sublime-text_build-3114_amd64.deb
 sudo apt -f install
 ```
-##### IntelliJ IDEA
+##### PHPStorm EAP
+Go to [https://confluence.jetbrains.com/display/PhpStorm/PhpStorm+Early+Access+Program](https://confluence.jetbrains.com/display/PhpStorm/PhpStorm+Early+Access+Program)
+```
+wget http://download.jetbrains.com/webide/PhpStorm-EAP-162.646.18.tar.gz
+tar xvf PhpStorm-EAP-162.646.18.tar.gz
+sudo mv PhpStorm-162.646.18 /opt/phpstorm
+sudo ln -s /opt/phpstorm/bin/phpstorm.sh /usr/local/bin/phpstorm
+
+```
+
 ##### Java
 ###### Oracle Java ([link](http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html))
 ```
