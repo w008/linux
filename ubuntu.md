@@ -35,48 +35,63 @@ sudo apt install mercurial
 ```
 sudo apt install meld
 ```
+##### cURL (A tool for client-side URL transfers)
 ```
 sudo apt install curl
 ```
+##### Htop (An interactive process viewer for Unix)
 ```
 sudo apt install htop
 ```
+##### XClip (Provides an interface to X selections from the command line)
 ```
 sudo apt install xclip
 ```
+##### Archive stuff
 ```
 sudo apt install unace rar unrar zip unzip p7zip-full p7zip-rar
 ```
+##### GDebi Package Installer
 ```
 sudo apt install gdebi
 ```
+##### Preload (Records statistics about usage of programs using Markov chains)
 ```
 sudo apt install preload
 ```
+##### BleachBit (Quickly frees disk space and tirelessly guards your privacy)
 ```
 sudo apt install bleachbit
 ```
+##### Set of user-space tools for in-kernel CIFS filesystem
 ```
 sudo apt install cifs-utils
 ```
+##### GNU Sharutils (Set of utilities to handle shell archives)
 ```
 sudo apt install sharutils
 ```
+##### OpenSSH
 ```
 sudo apt install openssh-server libssl-dev
 ```
+##### lm-sensors (Free and open-source application that provides tools and drivers for monitoring temperatures, voltage, and fans.)
 ```
 sudo apt install lm-sensors
 ```
+##### Font manager
 ```
 sudo apt install font-manager
 ```
+##### Secure SHell FileSystem
 ```
 sudo apt install sshfs
 ```
+##### Midnight Commander
 ```
 sudo apt install mc
 ```
+##### build-essential
 ```
 sudo apt install build-essential
 ```
