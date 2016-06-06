@@ -1,15 +1,86 @@
 ### System tools
+
+###### Initial install
+```
+sudo apt install git synaptic dconf-editor compizconfig-settings-manager compiz-plugins unity-tweak-tool build-essential vim mercurial meld curl htop xclip unzip gdebi preload bleachbit cifs-utils unace unrar zip p7zip-full p7zip-rar sharutils rar openssh-server libssl-dev lm-sensors font-manager sshfs mc
+```
+OR
+```
+sudo apt install git
+```
+```
+sudo apt install synaptic
+```
+```
+sudo apt install dconf-editor
+```
+```
+sudo apt install compizconfig-settings-manager compiz-plugins
+```
+```
+sudo apt install unity-tweak-tool
+```
+```
+sudo apt install vim
+```
+```
+sudo apt install mercurial
+```
+```
+sudo apt install meld
+```
+```
+sudo apt install curl
+```
+```
+sudo apt install htop
+```
+```
+sudo apt install xclip
+```
+```
+sudo apt install unace rar unrar zip unzip p7zip-full p7zip-rar
+```
+```
+sudo apt install gdebi
+```
+```
+sudo apt install preload
+```
+```
+sudo apt install bleachbit
+```
+```
+sudo apt install cifs-utils
+```
+```
+sudo apt install sharutils
+```
+```
+sudo apt install openssh-server libssl-dev
+```
+```
+sudo apt install lm-sensors
+```
+```
+sudo apt install font-manager
+```
+```
+sudo apt install sshfs
+```
+```
+sudo apt install mc
+```
+```
+sudo apt install build-essential
+```
 ###### Zsh & OhMyZsh
 ```
 sudo apt install zsh
 chsh -s /bin/zsh
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 ```
-###### Initial install
-```
-sudo apt install git synaptic dconf-editor compizconfig-settings-manager compiz-plugins unity-tweak-tool build-essential vim mercurial meld curl htop xclip unzip gdebi preload bleachbit cifs-utils unace unrar zip p7zip-full p7zip-rar sharutils rar openssh-server libssl-dev lm-sensors whois traceroute nmap font-manager sshfs mc
-```
-
+### Customizing
 ###### Ubuntu Tweak
 ```
 wget http://archive.getdeb.net/ubuntu/pool/apps/u/ubuntu-tweak/ubuntu-tweak_0.8.7-1~getdeb2~xenial_all.deb
@@ -21,6 +92,53 @@ sudo apt install -f
 sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 sudo apt update
 sudo apt install grub-customizer
+```
+###### GTK engines (needed for Skype)
+```
+sudo apt install gtk2-engines-murrine:i386 gtk2-engines-pixbuf:i386
+```
+###### My Weather Indicator
+```
+sudo add-apt-repository ppa:atareao/atareao
+sudo apt update
+sudo apt install my-weather-indicator
+```
+###### Caffeine
+```
+sudo apt install caffeine
+```
+###### Show username on panel
+```
+gsettings set com.canonical.indicator.session show-real-name-on-panel true
+```
+###### Minimize apps on click
+```
+gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-minimize-window true
+```
+###### Move The Unity Launcher
+```
+gsettings set com.canonical.Unity.Launcher launcher-position Bottom
+```
+### Multimedia
+###### Codecs
+```
+sudo apt install ubuntu-restricted-extras
+```
+###### Encrypted DVD playback
+```
+sudo apt install libdvd-pkg
+sudo dpkg-reconfigure libdvd-pkg
+```
+###### SMPlayer
+```
+sudo add-apt-repository ppa:rvm/smplayer
+sudo apt update
+sudo apt install smplayer smtube smplayer-themes smplayer-skins
+```
+### Internet & Network
+###### Tools
+```
+sudo apt install whois traceroute nmap
 ```
 ###### TeamViever
 ```
@@ -35,7 +153,7 @@ sudo apt update
 ```
 ```
 sudo dpkg -i teamviewer_linux*.deb
-sudo apt-get -f install
+sudo apt -f install
 ```
 
 Commands
@@ -63,46 +181,6 @@ sudo teamviewer --daemon disable
 ```
 sudo teamviewer --daemon enable
 ```
-### Customizing
-###### GTK engines (needed for Skype)
-```
-sudo apt install gtk2-engines-murrine:i386 gtk2-engines-pixbuf:i386
-```
-###### My Weather Indicator
-```
-sudo add-apt-repository ppa:atareao/atareao
-sudo apt update
-sudo apt install my-weather-indicator
-```
-###### Caffeine
-```
-sudo apt install caffeine
-```
-###### Show username on panel
-```
-gsettings set com.canonical.indicator.session show-real-name-on-panel true
-```
-###### Minimize apps on click
-```
-gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-minimize-window true
-```
-###### Move The Unity Launcher
-```
-gsettings set com.canonical.Unity.Launcher launcher-position Bottom
-```
-
-### Multimedia
-* Codecs
-```
-sudo apt install ubuntu-restricted-extras
-```
-* Encrypted DVD playback
-```
-sudo apt install libdvd-pkg
-sudo dpkg-reconfigure libdvd-pkg
-```
-
-### Internet
 ###### Telegram
 ```
 sudo add-apt-repository ppa:atareao/telegram
@@ -120,9 +198,7 @@ sudo apt install sni-qt:i386
 sudo add-apt-repository ppa:skype-wrapper/ppa
 sudo apt update
 sudo apt install skype-wrapper
-
 ```
-
 ###### Pidgin
 ```
 sudo apt install pidgin
@@ -163,24 +239,24 @@ sudo apt install chromium-browser pepperflashplugin-nonfree
 [How to use H.264, MP3 and AAC support ln Vivaldi for Linux, via an alternative FFMpeg library](https://gist.github.com/ruario/bec42d156d30affef655)
 ###### Firefox Development Edition
 ### Games
-###### NES
-FCEUX
+##### NES
+###### FCEUX
 ```
 sudo apt install fceux
 ```
-Higan
+###### Higan
 ```
 sudo apt install higan
 ```
-###### SNES
-###### Sega Gen
-GENS/GS
+##### SNES
+##### Sega Gen
+###### GENS/GS
 ```
 wget http://segaretro.org/images/7/75/Gens_2.16.7_i386.deb
 sudo dpkg -i Gens_2.16.7_i386.deb
 sudo apt install -f
 ```
-Kega Fusion
+###### Kega Fusion
 ```
 wget http://www.carpeludum.com/download/kega-fusion_3.63-2_i386.deb
 sudo dpkg -i kega-fusion_3.63-2_i386.deb
@@ -200,8 +276,8 @@ sudo apt install libreoffice-style-sifr
 ###### MComix
 ```
 sudo add-apt-repository ppa:nilarimogard/webupd8
-sudo apt-get update
-sudo apt-get install mcomix
+sudo apt update
+sudo apt install mcomix
 ```
 ### Development
 ##### Ubuntu Make
@@ -214,7 +290,7 @@ sudo apt install ubuntu-make
 ```
 wget https://download.sublimetext.com/sublime-text_build-3114_amd64.deb
 sudo dpkg -i sublime-text_build-3114_amd64.deb
-sudo apt-get -f install
+sudo apt -f install
 ```
 ##### IntelliJ IDEA
 ##### Java
@@ -284,18 +360,17 @@ I had the same problem until I put [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "
 
 ##### LAMP
 ```
-sudo apt-get install apache2
+sudo apt install apache2
 ```
 ```
-sudo apt-get install mysql-client mysql-server
+sudo apt install mysql-client mysql-server
 sudo mysql_secure_installation
 ```
 ```
-sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql
-sudo apt install php-cli php-curl php-gd php-sqlite3 php-tidy php-xmlrpc php-imagick php-mbstring php-gettext
+sudo apt install php libapache2-mod-php php-mcrypt php-mysql php-cli php-curl php-gd php-sqlite3 php-tidy php-xmlrpc php-imagick php-mbstring php-gettext
 ```
 ```
-sudo apt-get install phpmyadmin
+sudo apt install phpmyadmin
 ```
 
 After the installation has completed, add phpmyadmin to the apache configuration.
