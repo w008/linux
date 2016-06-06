@@ -80,7 +80,7 @@ sudo apt install mc
 ```
 sudo apt install build-essential
 ```
-#### Zsh & OhMyZsh
+##### Zsh & OhMyZsh
 ```
 sudo apt install zsh
 chsh -s /bin/zsh
