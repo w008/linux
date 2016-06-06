@@ -1,6 +1,5 @@
-### System tools
-
-###### Initial install
+## Packages
+### Initial install
 ```
 sudo apt install git synaptic dconf-editor compizconfig-settings-manager compiz-plugins unity-tweak-tool build-essential vim mercurial meld curl htop xclip unzip gdebi preload bleachbit cifs-utils unace unrar zip p7zip-full p7zip-rar sharutils rar openssh-server libssl-dev lm-sensors font-manager sshfs mc
 ```
@@ -8,24 +7,31 @@ OR
 ```
 sudo apt install git
 ```
+##### GTK+-based graphical user interface for Advanced Packaging Tool (APT)
 ```
 sudo apt install synaptic
 ```
+##### Low-level key/value database designed for storing desktop environment settings.
 ```
 sudo apt install dconf-editor
 ```
+##### Compiz settings manager with plugins
 ```
 sudo apt install compizconfig-settings-manager compiz-plugins
 ```
+##### Unity tweak tool
 ```
 sudo apt install unity-tweak-tool
 ```
+##### Vim
 ```
 sudo apt install vim
 ```
+##### Mercurial (Free, distributed source control management tool)
 ```
 sudo apt install mercurial
 ```
+##### Meld (Visual diff and merge tool targeted at developers)
 ```
 sudo apt install meld
 ```
@@ -74,73 +80,35 @@ sudo apt install mc
 ```
 sudo apt install build-essential
 ```
-###### Zsh & OhMyZsh
+#### Zsh & OhMyZsh
 ```
 sudo apt install zsh
 chsh -s /bin/zsh
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 ```
-### Customizing
-###### Ubuntu Tweak
-```
-wget http://archive.getdeb.net/ubuntu/pool/apps/u/ubuntu-tweak/ubuntu-tweak_0.8.7-1~getdeb2~xenial_all.deb
-sudo dpkg -i ubuntu-tweak_0.8.7-1~getdeb2~xenial_all.deb
-sudo apt install -f
-```
-###### Grub customizer
-```
-sudo add-apt-repository ppa:danielrichter2007/grub-customizer
-sudo apt update
-sudo apt install grub-customizer
-```
-###### GTK engines (needed for Skype)
-```
-sudo apt install gtk2-engines-murrine:i386 gtk2-engines-pixbuf:i386
-```
-###### My Weather Indicator
-```
-sudo add-apt-repository ppa:atareao/atareao
-sudo apt update
-sudo apt install my-weather-indicator
-```
-###### Caffeine
-```
-sudo apt install caffeine
-```
-###### Show username on panel
-```
-gsettings set com.canonical.indicator.session show-real-name-on-panel true
-```
-###### Minimize apps on click
-```
-gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-minimize-window true
-```
-###### Move The Unity Launcher
-```
-gsettings set com.canonical.Unity.Launcher launcher-position Bottom
-```
+
 ### Multimedia
-###### Codecs
+##### Codecs
 ```
 sudo apt install ubuntu-restricted-extras
 ```
-###### Encrypted DVD playback
+##### Encrypted DVD playback
 ```
 sudo apt install libdvd-pkg
 sudo dpkg-reconfigure libdvd-pkg
 ```
-###### SMPlayer
+##### SMPlayer
 ```
 sudo add-apt-repository ppa:rvm/smplayer
 sudo apt update
 sudo apt install smplayer smtube smplayer-themes smplayer-skins
 ```
 ### Internet & Network
-###### Tools
+##### Tools
 ```
 sudo apt install whois traceroute nmap
 ```
-###### TeamViever
+##### TeamViever
 ```
 sudo apt install libxtst6:i386 libxrandr2:i386
 ```
@@ -181,35 +149,35 @@ sudo teamviewer --daemon disable
 ```
 sudo teamviewer --daemon enable
 ```
-###### Telegram
+##### Telegram
 ```
 sudo add-apt-repository ppa:atareao/telegram
 sudo apt update
 sudo apt install telegram
 ```
-###### Skype
+##### Skype
 ```
 sudo apt install skype
 sudo apt -f install
 sudo apt install sni-qt:i386
 ```
-###### Skype wrapper
+##### Skype wrapper
 ```
 sudo add-apt-repository ppa:skype-wrapper/ppa
 sudo apt update
 sudo apt install skype-wrapper
 ```
-###### Pidgin
+##### Pidgin
 ```
 sudo apt install pidgin
 ```
-###### Telegram Purple plugin for Pidgin
+##### Telegram Purple plugin for Pidgin
 ```
 sudo add-apt-repository ppa:nilarimogard/webupd8
 sudo apt update
 sudo apt install telegram-purple
 ```
-###### Dropbox
+##### Dropbox
 ```
 sudo sh -c 'echo "deb http://linux.dropbox.com/ubuntu $(lsb_release -sc) main" >> /etc/apt/sources.list.d/dropbox.list'
 sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
@@ -220,60 +188,59 @@ or download .deb package from here
 ```
 https://www.dropbox.com/ru/install?os=lnx
 ```
-###### Google Chrome
+##### Google Chrome
 ```
 sudo sh -c 'echo "deb [arch=amd64] http://dl-ssl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo apt update
 sudo apt install google-chrome-stable
 ```
-###### Chromium & PepperFlash
+##### Chromium & PepperFlash
 ```
 sudo add-apt-repository ppa:canonical-chromium-builds/stage
 sudo apt update
 sudo apt install chromium-browser pepperflashplugin-nonfree
 ```
-###### Opera
-###### Opera Dev
-###### Vivaldi
+##### Opera
+##### Opera Dev
+##### Vivaldi
 [How to use H.264, MP3 and AAC support ln Vivaldi for Linux, via an alternative FFMpeg library](https://gist.github.com/ruario/bec42d156d30affef655)
-###### Firefox Development Edition
+##### Firefox Development Edition
 ### Games
-##### NES
-###### FCEUX
+#### NES
+##### FCEUX
 ```
 sudo apt install fceux
 ```
-###### Higan
+##### Higan
 ```
 sudo apt install higan
 ```
-##### SNES
-##### Sega Gen
-###### GENS/GS
+#### SNES
+#### Sega Gen
+##### GENS/GS
 ```
 wget http://segaretro.org/images/7/75/Gens_2.16.7_i386.deb
 sudo dpkg -i Gens_2.16.7_i386.deb
 sudo apt install -f
 ```
-###### Kega Fusion
+##### Kega Fusion
 ```
 wget http://www.carpeludum.com/download/kega-fusion_3.63-2_i386.deb
 sudo dpkg -i kega-fusion_3.63-2_i386.deb
 sudo apt install -f
 ```
 ### Office
-
-###### Okular
+##### Okular
 ```
 sudo apt install okular
 sudo apt install okular-extra-backends 
 ```
-###### Libre Office
+##### Libre Office
 ```
 sudo apt install libreoffice-style-sifr
 ```
-###### MComix
+##### MComix
 ```
 sudo add-apt-repository ppa:nilarimogard/webupd8
 sudo apt update
@@ -443,19 +410,58 @@ sudo nano /etc/hosts
 ```
 sudo service apache2 restart
 ```
-### Configuration
-###### Generating SSH key
+## Configuration
+#### Generating SSH key
 ```
 ssh-keygen -t rsa -C "your_email@example.com"
 ```
-###### Setup git defaults
+#### Setup git defaults
 ```
 git config --global user.name your name
 git config --global user.email your@email.com
 ```
-
-### Troubleshooting
-#### Error:  Diskfilter writes are not supported ([link](http://askubuntu.com/questions/468466/diskfilter-writes-are-not-supported-what-triggers-this-error))
+## Customization
+##### Ubuntu Tweak
+```
+wget http://archive.getdeb.net/ubuntu/pool/apps/u/ubuntu-tweak/ubuntu-tweak_0.8.7-1~getdeb2~xenial_all.deb
+sudo dpkg -i ubuntu-tweak_0.8.7-1~getdeb2~xenial_all.deb
+sudo apt install -f
+```
+##### Grub customizer
+```
+sudo add-apt-repository ppa:danielrichter2007/grub-customizer
+sudo apt update
+sudo apt install grub-customizer
+```
+##### GTK engines (needed for Skype)
+```
+sudo apt install gtk2-engines-murrine:i386 gtk2-engines-pixbuf:i386
+```
+##### My Weather Indicator
+```
+sudo add-apt-repository ppa:atareao/atareao
+sudo apt update
+sudo apt install my-weather-indicator
+```
+##### Caffeine
+```
+sudo apt install caffeine
+```
+##### Show username on panel
+```
+gsettings set com.canonical.indicator.session show-real-name-on-panel true
+```
+##### Minimize apps on click
+```
+gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-minimize-window true
+```
+##### Move The Unity Launcher
+```
+gsettings set com.canonical.Unity.Launcher launcher-position Bottom
+```
+## Other 
+## Troubleshooting
+### Error:  Diskfilter writes are not supported ([link](http://askubuntu.com/questions/468466/diskfilter-writes-are-not-supported-what-triggers-this-error))
 
 This is a bug that occurs in the most recent version of Ubuntu Server LTS (Ubuntu Server 14.04 LTS), when you create the boot partition (or the root partition, when the boot partition doesn't exists) inside a LVM or a RAID partition.
 
@@ -480,21 +486,21 @@ chmod +x /etc/grub.d/00_header
 update-grub
 ```
 
-#### Fix time differences between ubuntu and windows ([link](http://www.webupd8.org/2014/09/dual-boot-fix-time-differences-between.html))
+### Fix time differences between ubuntu and windows ([link](http://www.webupd8.org/2014/09/dual-boot-fix-time-differences-between.html))
 
 To fix the UTC / local time difference between Ubuntu and Windows from Ubuntu by making Ubuntu use local time.
 
-###### For Ubuntu 16.04 and newer
+##### For Ubuntu 16.04 and newer
 ```
 timedatectl set-local-rtc 1
 ```
-###### For Ubuntu versions older than 16.04
+##### For Ubuntu versions older than 16.04
 ```
 sudo sed -i 's/UTC=yes/UTC=no/' /etc/default/rcS
 ```
   And reboot.
   
-###### Windows
+##### Windows
 
 Fixing this from Windows (it should work with Vista SP2, Windows 7, Server 2008 R2 and Windows 8/8.1), by making it use UTC instead of local time, download [THIS](https://help.ubuntu.com/community/UbuntuTime?action=AttachFile&do=get&target=WindowsTimeFixUTC.reg) Windows registry file and simply double click it.
 
@@ -504,7 +510,7 @@ sc config w32time start= disabled
 ```
 And reboot.
 
-###### Reverting changes
+##### Reverting changes
 ```
 timedatectl set-local-rtc 0
 ```
@@ -523,3 +529,10 @@ Windows Registry Editor Version 5.00
 sc config w32time start= demand
 ```
 And reboot.
+
+
+
+
+
+
+
