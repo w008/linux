@@ -101,7 +101,12 @@ sudo apt install zsh
 chsh -s /bin/zsh
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 ```
-
+##### Double Commander
+```
+sudo add-apt-repository ppa:alexx2000/doublecmd
+sudo apt-get update
+sudo apt-get install doublecmd-gtk
+```
 ### Multimedia
 ##### Codecs
 ```
