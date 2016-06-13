@@ -603,6 +603,22 @@ sc config w32time start= demand
 ```
 And reboot.
 
+### Fix tearing on NVIDIA 
+```
+sudo nano /usr/share/lightdm/lightdm.conf.d/50-xserver-command.conf
+```
+
+```
+xserver-command=X *-bs* -core
+```
+
+```
+sudo service lightdm restart
+```
+
+
+
+
 
 
 
