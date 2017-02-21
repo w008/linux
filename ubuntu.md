@@ -359,7 +359,7 @@ rvm list known
 rvm install ...
 rvm use ...
 ```
-###### /home/user/.rvm/scripts/cli:314: parse error near `apt'
+###### /home/user/.rvm/scripts/cli:314: parse error near 'apt'
 
 I had the same problem until I put [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" into a .zshenv file instead of the .zshrc file.
 
@@ -471,6 +471,93 @@ sudo nano /etc/hosts
 ```
 sudo service apache2 restart
 ```
+##### (Alternative) Configure Nginx as a Reverse Proxy for Apache ([link](https://www.digitalocean.com/community/tutorials/how-to-configure-nginx-as-a-reverse-proxy-for-apache))
+
+##### Apache
+```
+sudo apt-get install apache2
+```
+```
+sudo nano /etc/apache2/ports.conf
+```
+```
+NameVirtualHost 127.0.0.1:8080
+Listen 127.0.0.1:8080
+```
+```
+sudo cp /etc/apache2/sites-available/default /etc/apache2/sites-available/test.loc
+```
+```
+sudo nano /etc/apache2/sites-available/test.loc
+```
+```
+<VirtualHost *:8080>
+    ServerAdmin admin@test.loc
+    ServerName test.loc
+    ServerAlias www.test.loc
+    DocumentRoot /var/www/test.loc
+    <Directory /var/www/test.loc>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        Order allow,deny
+        allow from all
+    </Directory>
+</VirtualHost>
+```
+```
+sudo a2ensite test.loc
+```
+```
+sudo service apache2 restart
+```
+##### PHP
+```
+sudo apt install php libapache2-mod-php php-mcrypt php-mysql php-cli php-curl php-gd php-sqlite3 php-tidy php-xmlrpc php-imagick php-mbstring php-gettext
+```
+##### Nginx
+```
+sudo apt install nginx
+```
+```
+sudo nano /etc/nginx/sites-available/example
+```
+```
+server {
+        listen   80; 
+
+        root /var/www/; 
+        index index.php index.html index.htm;
+
+        server_name example.com; 
+
+        location / {
+        try_files $uri $uri/ /index.php;
+        }
+
+        location ~ \.php$ {
+        
+        proxy_set_header X-Real-IP  $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:8080;
+
+         }
+
+         location ~ /\.ht {
+                deny all;
+        }
+}
+```
+```
+sudo ln -s /etc/nginx/sites-available/example /etc/nginx/sites-enabled/example
+```
+```
+sudo rm /etc/nginx/sites-enabled/default
+```
+```
+sudo service nginx restart
+```
+
 ## Configuration
 #### Generating SSH key
 ```
