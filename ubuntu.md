@@ -1,10 +1,6 @@
 ## Packages
 ### Initial install
 ```
-sudo apt install git synaptic dconf-editor compizconfig-settings-manager compiz-plugins unity-tweak-tool build-essential vim mercurial meld curl htop xclip unzip gdebi preload bleachbit cifs-utils unace unrar zip p7zip-full p7zip-rar sharutils rar openssh-server libssl-dev lm-sensors font-manager sshfs mc
-```
-OR
-```
 sudo apt install git
 ```
 ##### GTK+-based graphical user interface for Advanced Packaging Tool (APT)
