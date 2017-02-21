@@ -1,5 +1,10 @@
 ## Packages
 ### Initial install
+##### build-essential
+```
+sudo apt install build-essential
+```
+##### Git
 ```
 sudo apt install git
 ```
@@ -86,10 +91,6 @@ sudo apt install sshfs
 ##### Midnight Commander
 ```
 sudo apt install mc
-```
-##### build-essential
-```
-sudo apt install build-essential
 ```
 ##### Zsh & OhMyZsh
 ```
@@ -610,6 +611,11 @@ xserver-command=X *-bs* -core
 
 ```
 sudo service lightdm restart
+```
+## Usefull commands
+### Search package by name and version
+```
+sudo apt-cache show package | grep -i version
 ```
 
 
