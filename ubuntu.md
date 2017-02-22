@@ -535,16 +535,16 @@ sudo apt install php libapache2-mod-php php-mcrypt php-mysql php-cli php-curl ph
 sudo apt install nginx
 ```
 ```
-sudo nano /etc/nginx/sites-available/example
+sudo vim /etc/nginx/conf.d/default.conf
 ```
 ```
 server {
         listen   80; 
 
-        root /var/www/; 
+        root /var/www/html; 
         index index.php index.html index.htm;
 
-        server_name example.com; 
+        server_name localhost; 
 
         location / {
         try_files $uri $uri/ /index.php;
@@ -565,13 +565,7 @@ server {
 }
 ```
 ```
-sudo ln -s /etc/nginx/sites-available/example /etc/nginx/sites-enabled/example
-```
-```
-sudo rm /etc/nginx/sites-enabled/default
-```
-```
-sudo service nginx restart
+sudo systemctl restart nginx
 ```
 
 ## Configuration
