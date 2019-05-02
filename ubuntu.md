@@ -709,6 +709,24 @@ xserver-command=X *-bs* -core
 ```
 sudo service lightdm restart
 ```
+
+### How to diagnose/fix very slow boot on Ubuntu 18.04
+
+1. Edit the file /etc/default/grub file so that the string noresume is included in the GRUB_CMDLINE_LINUX_DEFAULT line, for example:
+
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash noresume"
+```
+
+2. Run this command to update GRUB:
+
+```
+sudo update-grub
+```
+
+3. Reboot the computer
+
+
 ## Usefull commands
 ### Search package by name and version
 ```
