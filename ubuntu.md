@@ -8,21 +8,9 @@ sudo apt install build-essential
 ```
 sudo apt install git
 ```
-##### GTK+-based graphical user interface for Advanced Packaging Tool (APT)
-```
-sudo apt install synaptic
-```
 ##### Low-level key/value database designed for storing desktop environment settings.
 ```
 sudo apt install dconf-editor
-```
-##### Vim
-```
-sudo apt install vim
-```
-##### Mercurial (Free, distributed source control management tool)
-```
-sudo apt install mercurial
 ```
 ##### Meld (Visual diff and merge tool targeted at developers)
 ```
@@ -101,11 +89,6 @@ sudo apt-get install doublecmd-gtk
 ```
 sudo apt install ubuntu-restricted-extras
 ```
-##### Encrypted DVD playback
-```
-sudo apt install libdvd-pkg
-sudo dpkg-reconfigure libdvd-pkg
-```
 ##### SMPlayer
 ```
 sudo add-apt-repository ppa:rvm/smplayer
@@ -127,7 +110,7 @@ sudo apt install mpd cantata
 ### Internet & Network
 ##### Tools
 ```
-sudo apt install whois traceroute nmap
+sudo apt install gnome-nettools
 ```
 ##### TeamViever
 ```
@@ -227,15 +210,6 @@ sudo dpkg -i kega-fusion_3.63-2_i386.deb
 sudo apt install -f
 ```
 ### Office
-##### Okular
-```
-sudo apt install okular
-sudo apt install okular-extra-backends 
-```
-##### Libre Office
-```
-sudo apt install libreoffice-style-sifr
-```
 ##### MComix
 ```
 sudo add-apt-repository ppa:nilarimogard/webupd8
@@ -254,25 +228,6 @@ sudo ln -s /opt/phpstorm/bin/phpstorm.sh /usr/local/bin/phpstorm
 ```
 
 ##### Java
-###### Oracle Java ([link](http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html))
-```
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt update
-sudo apt install oracle-java8-installer
-```
-```
-sudo apt install oracle-java8-set-default
-```
-###### OpenJDK (patched with font fixes) ([link](http://www.webupd8.org/2013/06/install-openjdk-patched-with-font-fixes.html))
-```
-sudo add-apt-repository ppa:no1wantdthisname/openjdk-fontfix
-sudo apt update
-sudo apt install openjdk-8-jdk
-```
-
-```
-sudo update-alternatives --config java
-```
 ##### NodeJS (nvm)
 ```
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.1/install.sh | bash
@@ -301,21 +256,6 @@ sudo apt-get install -y mongodb-org
 ```
 ```
 sudo service mongod start
-```
-
-##### Python
-```
-wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-chmod +x Miniconda3-latest-Linux-x86_64.sh
-./Miniconda3-latest-Linux-x86_64.sh
-```
-```
-nano .zshrc
-export PATH="/home/auvarov/miniconda3/bin:$PATH"
-source ~/.zshrc
-```
-```
-conda update conda
 ```
 ##### Ruby (rvm)
 ```
@@ -380,12 +320,6 @@ Include /etc/phpmyadmin/apache.conf
 ```
 ```
 sudo service apache2 restart
-```
-###### DBeaver (Free Universal Database Manager)
-```
-wget http://dbeaver.jkiss.org/files/dbeaver-ce_latest_amd64.deb
-sudo dpkg -i dbeaver-ce_latest_amd64.deb
-sudo apt install -f
 ```
 ###### MyCLI ([A Terminal Client for MySQL with AutoCompletion and Syntax Highlighting](https://github.com/dbcli/mycli))
 ```
