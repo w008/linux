@@ -16,14 +16,6 @@ sudo apt install synaptic
 ```
 sudo apt install dconf-editor
 ```
-##### Compiz settings manager with plugins
-```
-sudo apt install compizconfig-settings-manager compiz-plugins
-```
-##### Unity tweak tool
-```
-sudo apt install unity-tweak-tool
-```
 ##### Vim
 ```
 sudo apt install vim
@@ -184,28 +176,6 @@ sudo add-apt-repository ppa:atareao/telegram
 sudo apt update
 sudo apt install telegram
 ```
-##### Skype
-```
-sudo apt install skype
-sudo apt -f install
-sudo apt install sni-qt:i386
-```
-##### Skype wrapper
-```
-sudo add-apt-repository ppa:skype-wrapper/ppa
-sudo apt update
-sudo apt install skype-wrapper
-```
-##### Pidgin
-```
-sudo apt install pidgin
-```
-##### Telegram Purple plugin for Pidgin
-```
-sudo add-apt-repository ppa:nilarimogard/webupd8
-sudo apt update
-sudo apt install telegram-purple
-```
 ##### Dropbox
 ```
 sudo sh -c 'echo "deb http://linux.dropbox.com/ubuntu $(lsb_release -sc) main" >> /etc/apt/sources.list.d/dropbox.list'
@@ -230,11 +200,8 @@ sudo add-apt-repository ppa:canonical-chromium-builds/stage
 sudo apt update
 sudo apt install chromium-browser pepperflashplugin-nonfree
 ```
-##### Opera
-##### Opera Dev
 ##### Vivaldi
 [How to use H.264, MP3 and AAC support ln Vivaldi for Linux, via an alternative FFMpeg library](https://gist.github.com/ruario/bec42d156d30affef655)
-##### Firefox Development Edition
 ### Games
 #### NES
 ##### FCEUX
@@ -276,18 +243,6 @@ sudo apt update
 sudo apt install mcomix
 ```
 ### Development
-##### Ubuntu Make
-```
-sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
-sudo apt update
-sudo apt install ubuntu-make
-```
-##### Sublime text 3
-```
-wget https://download.sublimetext.com/sublime-text_build-3114_amd64.deb
-sudo dpkg -i sublime-text_build-3114_amd64.deb
-sudo apt -f install
-```
 ##### PHPStorm EAP
 Go to [https://confluence.jetbrains.com/display/PhpStorm/PhpStorm+Early+Access+Program](https://confluence.jetbrains.com/display/PhpStorm/PhpStorm+Early+Access+Program)
 ```
@@ -579,21 +534,11 @@ git config --global user.name your name
 git config --global user.email your@email.com
 ```
 ## Customization
-##### Ubuntu Tweak
-```
-wget http://archive.getdeb.net/ubuntu/pool/apps/u/ubuntu-tweak/ubuntu-tweak_0.8.7-1~getdeb2~xenial_all.deb
-sudo dpkg -i ubuntu-tweak_0.8.7-1~getdeb2~xenial_all.deb
-sudo apt install -f
-```
 ##### Grub customizer
 ```
 sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 sudo apt update
 sudo apt install grub-customizer
-```
-##### GTK engines (needed for Skype)
-```
-sudo apt install gtk2-engines-murrine:i386 gtk2-engines-pixbuf:i386
 ```
 ##### My Weather Indicator
 ```
@@ -604,10 +549,6 @@ sudo apt install my-weather-indicator
 ##### Caffeine
 ```
 sudo apt install caffeine
-```
-##### Show username on panel
-```
-gsettings set com.canonical.indicator.session show-real-name-on-panel true
 ```
 ##### Change datetime format on panel
 
@@ -621,10 +562,6 @@ Go to com/canonical/indicator/datetime:
 ##### Minimize apps on click
 ```
 gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-minimize-window true
-```
-##### Move The Unity Launcher
-```
-gsettings set com.canonical.Unity.Launcher launcher-position Bottom
 ```
 ## Other 
 ## Troubleshooting
