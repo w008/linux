@@ -348,11 +348,22 @@ sudo a2enmod rewrite
 sudo apt install mysql-client mysql-server
 sudo mysql_secure_installation
 ```
-###### PHP
+###### PHP 8.1
+Add repository
 ```
-sudo apt install php libapache2-mod-php php-mcrypt php-mysql php-cli php-curl php-gd php-sqlite3 php-tidy php-xmlrpc php-imagick php-mbstring php-gettext
+sudo apt update
+sudo apt install lsb-release ca-certificates apt-transport-https software-properties-common -y
+sudo add-apt-repository ppa:ondrej/php
 ```
-
+Updating
+```
+sudo apt update
+```
+Installing php and commonly used extensions
+```
+sudo apt install php8.1
+sudo apt install php8.1-{bcmath,xml,fpm,mysql,zip,intl,ldap,gd,cli,bz2,curl,mbstring,pgsql,opcache,soap,cgi}
+```
 ###### PHPMyAdmin
 ```
 sudo apt install phpmyadmin
