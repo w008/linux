@@ -4,10 +4,6 @@
 ```
 sudo apt install build-essential lsb-release ca-certificates apt-transport-https software-properties-common git dconf-editor curl wget htop unace rar unrar zip unzip p7zip-full p7zip-rar 
 ```
-##### Meld (Visual diff and merge tool targeted at developers)
-```
-sudo apt install meld
-```
 ##### XClip (Provides an interface to X selections from the command line)
 ```
 sudo apt install xclip
@@ -15,10 +11,6 @@ sudo apt install xclip
 ##### Preload (Records statistics about usage of programs using Markov chains)
 ```
 sudo apt install preload
-```
-##### BleachBit (Quickly frees disk space and tirelessly guards your privacy)
-```
-sudo apt install bleachbit
 ```
 ##### Set of user-space tools for in-kernel CIFS filesystem
 ```
@@ -64,18 +56,6 @@ sudo apt-get install doublecmd-gtk
 ##### Codecs
 ```
 sudo apt install ubuntu-restricted-extras
-```
-##### SMPlayer
-```
-sudo add-apt-repository ppa:rvm/smplayer
-sudo apt update
-sudo apt install smplayer smtube smplayer-themes smplayer-skins
-```
-##### DeadBeef
-```
-sudo add-apt-repository ppa:starws-box/deadbeef-player
-sudo apt update
-sudo apt install deadbeef
 ```
 ##### Mpd & Cantata
 ```
