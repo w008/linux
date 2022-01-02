@@ -2,7 +2,7 @@
 ### Initial install
 ##### Some libs
 ```
-sudo apt install build-essential lsb-release ca-certificates apt-transport-https software-properties-common git dconf-editor curl wget htop unace rar unrar zip unzip p7zip-full p7zip-rar 
+sudo apt install build-essential dpkg-dev gnupg2 gcc cmake libpcre3 libpcre3-dev zlib1g zlib1g-dev openssl libssl-dev lsb-release ca-certificates apt-transport-https software-properties-common git dconf-editor curl wget htop unace rar unrar zip unzip p7zip-full p7zip-rar 
 ```
 ##### XClip (Provides an interface to X selections from the command line)
 ```
@@ -378,44 +378,195 @@ sudo service apache2 restart
 ```
 sudo apt install php libapache2-mod-php php-mcrypt php-mysql php-cli php-curl php-gd php-sqlite3 php-tidy php-xmlrpc php-imagick php-mbstring php-gettext
 ```
-##### Nginx
+##### Nginx (from source with brotli https://github.com/pepelsbey/playground/blob/main/56/1-server.md)
 ```
-sudo apt install nginx
+sudo curl -L https://nginx.org/keys/nginx_signing.key | apt-key add -
 ```
 ```
-sudo vim /etc/nginx/conf.d/default.conf
+sudo nano /etc/apt/sources.list.d/nginx.list
+
+deb http://nginx.org/packages/ubuntu/ focal nginx
+deb-src http://nginx.org/packages/ubuntu/ focal nginx
+sudo apt update -y
+```
+```
+cd /usr/local/src
+sudo apt source nginx
+```
+```
+sudo apt build-dep nginx -y
+```
+```
+sudo git clone --recursive https://github.com/google/ngx_brotli.git
+```
+```
+cd /usr/local/src/nginx-*/
+sudo nano debian/rules
+
+Add --add-module=/usr/local/src/ngx_brotli in configure
+```
+```
+sudo dpkg-buildpackage -b -uc -us
+```
+```
+sudo dpkg -i /usr/local/src/*.deb
+```
+```
+sudo nano /etc/nginx/nginx.conf
+```
+```
+user www-data;
+worker_processes auto;
+pid /var/run/nginx.pid;
+
+events {
+    worker_connections 768;
+}
+
+include /etc/nginx/sites-enabled/*.stream;
+
+http {
+
+    # Basic
+
+    sendfile on;
+    tcp_nopush on;
+    tcp_nodelay on;
+    types_hash_max_size 2048;
+    server_tokens off;
+    ignore_invalid_headers on;
+
+    # Decrease default timeouts to drop slow clients
+
+    keepalive_timeout 40s;
+    send_timeout 20s;
+    client_header_timeout 20s;
+    client_body_timeout 20s;
+    reset_timedout_connection on;
+
+    # Hash sizes
+
+    server_names_hash_bucket_size 64;
+
+    # Mime types
+
+    default_type  application/octet-stream;
+    include /etc/nginx/mime.types;
+
+    # Logs
+
+    log_format main '$remote_addr - $remote_user [$time_local] "$request" $status $bytes_sent "$http_referer" "$http_user_agent" "$gzip_ratio"';
+    access_log /var/log/nginx/access.log main;
+    error_log /var/log/nginx/error.log warn;
+
+    # Limits
+
+    limit_req_zone  $binary_remote_addr  zone=dos_attack:20m   rate=30r/m;
+
+    # Gzip
+
+    gzip on;
+    gzip_disable "msie6";
+    gzip_vary off;
+    gzip_proxied any;
+    gzip_comp_level 5;
+    gzip_min_length 1000;
+    gzip_buffers 16 8k;
+    gzip_http_version 1.1;
+    gzip_types
+        application/atom+xml
+        application/javascript
+        application/json
+        application/ld+json
+        application/manifest+json
+        application/rss+xml
+        application/vnd.geo+json
+        application/vnd.ms-fontobject
+        application/x-font-ttf
+        application/x-web-app-manifest+json
+        application/xhtml+xml
+        application/xml
+        font/opentype
+        image/bmp
+        image/svg+xml
+        image/x-icon
+        text/cache-manifest
+        text/css
+        text/plain
+        text/vcard
+        text/vnd.rim.location.xloc
+        text/vtt
+        text/x-component
+        text/x-cross-domain-policy;
+
+    # Brotli
+
+    brotli on;
+    brotli_comp_level 6;
+    brotli_types
+        text/xml
+        image/svg+xml
+        application/x-font-ttf
+        image/vnd.microsoft.icon
+        application/x-font-opentype
+        application/json
+        font/eot
+        application/vnd.ms-fontobject
+        application/javascript
+        font/otf
+        application/xml
+        application/xhtml+xml
+        text/javascript
+        application/x-javascript
+        text/$;
+
+    # Virtual Hosts
+
+    include /etc/nginx/sites-enabled/*;
+
+    # Configs
+
+    include /etc/nginx/conf.d/*.conf;
+    include /usr/share/nginx/modules/*.conf;
+
+}
+```
+```
+sudo mkdir -p /etc/nginx/sites-available/
+sudo mkdir -p /etc/nginx/sites-enabled/
+```
+```
+sudo mkdir -p /var/www/example.com/html
+```
+```
+sudo nano /etc/nginx/sites-available/example.com.conf
 ```
 ```
 server {
-        listen   80; 
+    listen 80;
+    listen [::]:80;
 
-        root /var/www/html; 
-        index index.php index.html index.htm;
+    server_name example.com www.example.com;
+    root /var/www/example.com/html;
+    index index.html index.xml;
 
-        server_name localhost; 
+    location ~ \.php$ {
+        #NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
+        include fastcgi_params;                
+        fastcgi_intercept_errors on;
+        fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $document_root/$fastcgi_script_name;
+    }
 
-        location / {
-        try_files $uri $uri/ /index.php;
-        }
-
-        location ~ \.php$ {
-        
-        proxy_set_header X-Real-IP  $remote_addr;
-        proxy_set_header X-Forwarded-For $remote_addr;
-        proxy_set_header Host $host;
-        proxy_pass http://127.0.0.1:8080;
-
-         }
-
-         location ~ /\.ht {
-                deny all;
-        }
 }
+
+```
+```
+sudo ln -s /etc/nginx/sites-available/example.com.conf /etc/nginx/sites-enabled/
 ```
 ```
 sudo systemctl restart nginx
 ```
-
 ## Configuration
 #### Generating SSH key
 ```
@@ -426,6 +577,9 @@ ssh-keygen -t rsa -C "your_email@example.com"
 git config --global user.name your name
 git config --global user.email your@email.com
 ```
+#### Personal Access Token (https://stackoverflow.com/questions/46645843/where-to-store-my-git-personal-access-token)
+Store PAT permanently in a file with git commands ```git config credential.helper store``` (don't use --global). This is NOT ENCRYPTED. You can open the file and read it. (e.g., If someone gets access to your laptop they can pretty much read the Password using a bootable USB (assuming your whole system is not encrypted)).
+
 ## Customization
 ##### Grub customizer
 ```
