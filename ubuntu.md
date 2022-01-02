@@ -8,10 +8,6 @@ sudo apt install build-essential lsb-release ca-certificates apt-transport-https
 ```
 sudo apt install xclip
 ```
-##### Preload (Records statistics about usage of programs using Markov chains)
-```
-sudo apt install preload
-```
 ##### Set of user-space tools for in-kernel CIFS filesystem
 ```
 sudo apt install cifs-utils
@@ -111,9 +107,7 @@ sudo teamviewer --daemon enable
 ```
 ##### Telegram
 ```
-sudo add-apt-repository ppa:atareao/telegram
-sudo apt update
-sudo apt install telegram
+sudo apt install telegram-desktop
 ```
 ##### Dropbox
 ```
