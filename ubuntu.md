@@ -247,8 +247,6 @@ sudo mysql_secure_installation
 ###### PHP 8.1
 Add repository
 ```
-sudo apt update
-sudo apt install  -y
 sudo add-apt-repository ppa:ondrej/php
 ```
 Updating
