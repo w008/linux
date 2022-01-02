@@ -1,40 +1,16 @@
 ## Packages
 ### Initial install
-##### build-essential
+##### Some libs
 ```
-sudo apt install build-essential
-```
-##### Git
-```
-sudo apt install git
-```
-##### Low-level key/value database designed for storing desktop environment settings.
-```
-sudo apt install dconf-editor
+sudo apt install build-essential lsb-release ca-certificates apt-transport-https software-properties-common git dconf-editor curl wget htop unace rar unrar zip unzip p7zip-full p7zip-rar 
 ```
 ##### Meld (Visual diff and merge tool targeted at developers)
 ```
 sudo apt install meld
 ```
-##### cURL (A tool for client-side URL transfers)
-```
-sudo apt install curl
-```
-##### Htop (An interactive process viewer for Unix)
-```
-sudo apt install htop
-```
 ##### XClip (Provides an interface to X selections from the command line)
 ```
 sudo apt install xclip
-```
-##### Archive stuff
-```
-sudo apt install unace rar unrar zip unzip p7zip-full p7zip-rar
-```
-##### GDebi Package Installer
-```
-sudo apt install gdebi
 ```
 ##### Preload (Records statistics about usage of programs using Markov chains)
 ```
@@ -292,7 +268,7 @@ sudo mysql_secure_installation
 Add repository
 ```
 sudo apt update
-sudo apt install lsb-release ca-certificates apt-transport-https software-properties-common -y
+sudo apt install  -y
 sudo add-apt-repository ppa:ondrej/php
 ```
 Updating
