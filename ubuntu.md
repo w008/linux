@@ -1,8 +1,8 @@
 ## Packages
 ### Initial install
-##### Some libs
+##### Some libs & soft
 ```
-sudo apt install build-essential dpkg-dev gnupg2 gcc cmake libpcre3 libpcre3-dev zlib1g zlib1g-dev openssl libssl-dev lsb-release ca-certificates apt-transport-https software-properties-common git dconf-editor curl wget htop unace rar unrar zip unzip p7zip-full p7zip-rar 
+sudo apt install build-essential dpkg-dev gnupg2 gcc cmake libpcre3 libpcre3-dev zlib1g zlib1g-dev openssl libssl-dev lsb-release ca-certificates apt-transport-https software-properties-common lm-sensors gnome-nettools git dconf-editor curl wget htop mc zsh openssh-server unace rar unrar zip unzip p7zip-full p7zip-rar ubuntu-restricted-extras
 ```
 ##### XClip (Provides an interface to X selections from the command line)
 ```
@@ -12,18 +12,6 @@ sudo apt install xclip
 ```
 sudo apt install cifs-utils
 ```
-##### GNU Sharutils (Set of utilities to handle shell archives)
-```
-sudo apt install sharutils
-```
-##### OpenSSH
-```
-sudo apt install openssh-server libssl-dev
-```
-##### lm-sensors (Free and open-source application that provides tools and drivers for monitoring temperatures, voltage, and fans.)
-```
-sudo apt install lm-sensors
-```
 ##### Font manager
 ```
 sudo apt install font-manager
@@ -32,13 +20,8 @@ sudo apt install font-manager
 ```
 sudo apt install sshfs
 ```
-##### Midnight Commander
+##### OhMyZsh
 ```
-sudo apt install mc
-```
-##### Zsh & OhMyZsh
-```
-sudo apt install zsh
 chsh -s /bin/zsh
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 ```
@@ -49,10 +32,6 @@ sudo apt-get update
 sudo apt-get install doublecmd-gtk
 ```
 ### Multimedia
-##### Codecs
-```
-sudo apt install ubuntu-restricted-extras
-```
 ##### Mpd & Cantata
 ```
 sudo add-apt-repository ppa:ubuntuhandbook1/cantata-qt 
@@ -60,10 +39,6 @@ sudo apt update
 sudo apt install mpd cantata
 ```
 ### Internet & Network
-##### Tools
-```
-sudo apt install gnome-nettools
-```
 ##### TeamViever
 ```
 sudo apt install libxtst6:i386 libxrandr2:i386
